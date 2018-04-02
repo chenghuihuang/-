@@ -8,6 +8,43 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Name="hello">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/fa.jpg" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Name="Title" Text="Easyplayer" 
+                       Grid.Row="0"
+                       Margin="197,67,-3,-1499" 
+                       Style="{StaticResource HeaderTextBlockStyle}" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center" Grid.RowSpan="3" Width="446" />
+        </Grid>
+        <StackPanel >
+            <Grid VariableSizedWrapGrid.RowSpan ="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="23*"/>
+                </Grid.ColumnDefinitions>
+                <MediaElement x:Name="mediaPlayer" AreTransportControlsEnabled="True"
+                              Margin="0,150,0,-305" Height="600" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <Button Content="打开文件" RenderTransformOrigin="1.486,2.929" HorizontalAlignment="Left"
+                     FontSize="24" Click="Button_Click_1" VerticalAlignment="Stretch" Margin="0,0,-126,376" Canvas.ZIndex="6" Width="126" Grid.ColumnSpan="2">
+                    <Button.Flyout>
+                        <MenuFlyout >
+                            <MenuFlyoutItem Text="MP3"   Click="Button_Click"/>
+                            <MenuFlyoutSeparator />
+                            <MenuFlyoutItem Text="MP4"    Click="Button_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </Grid>
+        </StackPanel>
+
 
     </Grid>
 </Page>
